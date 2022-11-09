@@ -1,0 +1,41 @@
+.select-header {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-p {
+    padding-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.option-1 {
+    background-color: #fef7b6;
+}
+
+.option-2 {
+    background-color: #C1BBEB;
+}
+
+.option-3 {
+    background-color: #A2C7E5;
+}
+
+#panel1a-header {
+    background-color: #FEF7B6;
+}
+
+#panel2a-header {
+    background-color: #C1BBEB;
+}
+
+#panel3a-header {
+    background-color: #A2C7E5;
+}
+
+
+
+.MuiAccordion-root {
+    padding: 10px;
+}

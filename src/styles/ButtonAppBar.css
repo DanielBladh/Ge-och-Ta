@@ -1,0 +1,62 @@
+.popup-overlay {
+    backdrop-filter: blur(8px) opacity(100%) brightness(90%);
+  }
+
+.modal {
+    margin: 0 auto;
+    width: 90%;
+    padding: 2em;
+    padding-bottom: 2em;
+    background-color: rgb(255, 255, 255);
+    line-height: 20px;
+    border: 2px solid rgb(241, 181, 77);
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.modal>.header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+}
+
+.modal>.content {
+    margin: 0 auto;
+    width: 90%;
+    padding: 2em;
+    padding-bottom: 2em;
+    background-color: rgb(255, 255, 255);
+    line-height: 20px;
+    border: 2px solid rgb(241, 181, 77);
+    border-radius: 15px;
+  }
+
+.modal>.actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+}
+
+.modal>.close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 20px;
+    top: -5px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+}
+
+.infoContent {
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    max-width: 400px;
+  }

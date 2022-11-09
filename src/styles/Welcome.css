@@ -1,0 +1,31 @@
+.welcome-header {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.welcome-content {      
+       background-color: white;
+       border: 1px solid rgb(255, 255, 255);
+       border-radius: 10%;
+       width: 90%;
+       margin: auto;
+       background: rgba(255, 255, 255, 0.8);
+       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.welcome-box {
+    height: 40vh;
+    text-align: center; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+#forward-button {
+    position: relative;
+    margin-top: 100%;
+}
+
+.welcome-p {
+    padding: 0.5rem;
+}
