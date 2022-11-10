@@ -1,0 +1,90 @@
+{
+  "parents": [
+    {
+      "id": 0,
+      "name": "Anna",
+      "adress": "Skatgatan 6",
+      "postnummer": "13140",
+      "ort": "Nacka",
+      "currentPackages": [
+        {
+          "id": 0,
+          "size": "Small 44-50",
+          "content": [
+            "10 bodys",
+            "6 tröjor",
+            "8 byxor",
+            "9 strumpor",
+            "2 mössor",
+            "3 par skor",
+            "2 par vantar"
+          ]
+        },
+        {
+          "id": 1,
+          "size": "Medium 50-56",
+          "content": [
+            "10 bodys",
+            "6 tröjor",
+            "8 byxor",
+            "9 strumpor",
+            "2 mössor",
+            "3 par skor",
+            "2 par vantar"
+          ]
+        }
+      ],
+      "children": [
+        {
+          "name": "Ronja",
+          "age": "2 månader"
+        },
+        {
+          "name": "Kalle",
+          "age": "2 månader"
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "id": 0,
+      "size": "Small 44-50",
+      "content": [
+        "10 bodys",
+        "6 tröjor",
+        "8 byxor",
+        "9 strumpor",
+        "2 mössor",
+        "3 par skor",
+        "2 par vantar"
+      ]
+    },
+    {
+      "id": 1,
+      "size": "Medium 50-56",
+      "content": [
+        "10 bodys",
+        "6 tröjor",
+        "8 byxor",
+        "9 strumpor",
+        "2 mössor",
+        "3 par skor",
+        "2 par vantar"
+      ]
+    },
+    {
+      "id": 2,
+      "size": "Large 56-62",
+      "content": [
+        "10 bodys",
+        "6 tröjor",
+        "8 byxor",
+        "9 strumpor",
+        "2 mössor",
+        "3 par skor",
+        "2 par vantar"
+      ]
+    }
+  ]
+}

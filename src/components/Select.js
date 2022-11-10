@@ -16,36 +16,44 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import CircleIcon from '@mui/icons-material/Circle';
 import ChildCareIcon from '@mui/icons-material/ChildCare';
 
 
 
 const Select = () => {
 
-    const [data, setData] = useState([]);
-    let navigate = useNavigate();
+    const [packages, setPackages] = useState(null);
 
-    const getData = async () => {
-        await fetch('db.json', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
+    const getPackages = async () => {
+        const res = await fetch('http://localhost:3001/packages')
             .then((res) => res.json())
-            .then((res) => {
-                console.log(res);
-                setData(res);
-            });
+            .then((res) => res);
+        setPackages(res);
     };
 
     useEffect(() => {
-        const getDataAsync = async () => {
-            await getData();
-        }
-        getDataAsync();
+        getPackages();
     }, []);
+
+    let navigate = useNavigate();
+
+    const packageChoice = (wholePackage) => {
+        fetch('http://localhost:3001/parents/0').then((res) => {
+            res.json().then((parent) => {
+                parent.currentPackages.push(wholePackage)
+
+                const config = {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(parent),
+                };
+                fetch('http://localhost:3001/parents/0', config).then(
+                    (res) => res.json()
+                );
+            });
+        })
+    };
+
 
     return (
         <>
@@ -58,8 +66,8 @@ const Select = () => {
             </div>
             <div className='accordion-menu'>
                 {
-                    data.package !== undefined && data.package !== null &&
-                    data.package.map((item, index) => {
+                    packages !== undefined && packages !== null &&
+                    packages.map((item, index) => {
                         return (
                             <Accordion key={index}>
                                 <AccordionSummary
@@ -101,7 +109,7 @@ const Select = () => {
                                         position: 'absolute',
                                         bottom: 0,
                                     }}
-                                        onClick={() => { navigate('/Confirm') }}>
+                                        onClick={() => { packageChoice(item); navigate('/Confirm') }}>
                                         VÄLJ
                                     </Button>
                                 </AccordionDetails>

@@ -8,43 +8,34 @@ import { Button } from "@mui/material"
 
 const Welcome = () => {
 
-  const [data, setData] = useState([]);
-  let navigate = useNavigate();
+  const [parents, setParents] = useState()
 
-  const getData = async () => {
-    await fetch('db.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        setData(res);
-      });
-  };
+  const getParents = async () => {
+    const res = await fetch('http://localhost:3001/parents')
+      .then((res) => res.json()
+      );
+    setParents(res);
+  }
 
   useEffect(() => {
-    const getDataAsync = async () => {
-      await getData();
-    }
-    getDataAsync();
+    getParents();
   }, []);
+
+  let navigate = useNavigate();
 
   return (
     <>
       <ButtonAppBar />
       <div className="welcome-header">
         {
-          data.parents !== undefined && data.parents.length > 0 &&
-          <h1>Välkommen {data.parents[0].name}</h1>
+          parents !== undefined && parents.length > 0 &&
+          <h1>Välkommen {parents[0].name}</h1>
         }
       </div>
       <div className="welcome-content">
         <div className="welcome-box">
           {
-            data.parents !== undefined && data.parents.map((item, index) => {
+            parents !== undefined && parents.map((item, index) => {
               return (
                 <div key={index}>
                   <p className="welcome-p">Du har {item.children.length} barn registrerad.</p>
@@ -63,7 +54,7 @@ const Welcome = () => {
                     })
                   }
                   <br />
-                  <p className="welcome-p">Din registrerade adress är: <br /> {data.parents[0].adress} <br /> {data.parents[0].postnummer} {data.parents[0].ort}</p>
+                  <p className="welcome-p">Din registrerade adress är: <br /> {parents[0].adress} <br /> {parents[0].postnummer} {parents[0].ort}</p>
                   <Modal />
                 </div>
               )
