@@ -8,6 +8,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Container from '@mui/material/Container';
 
 
 import Box from '@mui/material/Box';
@@ -58,13 +59,13 @@ const Select = () => {
     return (
         <>
             <ButtonAppBar />
-            <div className="select-header">
-                <h1 className="select-h1">Våra paket</h1>
-                <p className="select-p"> Välj mellan 3 olika storlekar nedan. <br />
+            <Container className="select-header">
+                <Typography variant="h4">Våra paket</Typography>
+                <Typography className="select-p"> Välj mellan 3 olika storlekar nedan. <br />
                     Alla paket kommer i blandade färger.
-                </p>
-            </div>
-            <div className='accordion-menu'>
+                </Typography>
+            </Container>
+            <Container className="accordion-menu">
                 {
                     packages !== undefined && packages !== null &&
                     packages.map((item, index) => {
@@ -95,29 +96,30 @@ const Select = () => {
                                                 })
                                             }
                                         </List>
+                                        <Button sx={{
+                                            backgroundColor: '#F3A358',
+                                            margin: 'auto',
+                                            marginTop: '15px',
+                                            width: '90%',
+                                            height: '2.5rem',
+                                            fontWeight: 'bold',
+                                            color: 'white',
+                                            fontSize: '1rem',
+                                            left: '50%',
+                                            marginLeft: '-45%',
+                                            bottom: 0,
+                                        }}
+                                            onClick={() => { packageChoice(item); navigate('/Confirm') }}>
+                                            VÄLJ
+                                        </Button>
                                     </Box>
-                                    <Button sx={{
-                                        backgroundColor: '#F3A358',
-                                        margin: 'auto',
-                                        width: '90%',
-                                        height: '2.5rem',
-                                        fontWeight: 'bold',
-                                        color: 'white',
-                                        fontSize: '1rem',
-                                        left: '50%',
-                                        marginLeft: '-45%',
-                                        position: 'absolute',
-                                        bottom: 0,
-                                    }}
-                                        onClick={() => { packageChoice(item); navigate('/Confirm') }}>
-                                        VÄLJ
-                                    </Button>
                                 </AccordionDetails>
                             </Accordion>
                         )
                     })
                 }
-            </div>
+                <button onClick={() => { navigate('/Confirm')}}>nästa</button>
+            </Container>
         </>
     );
 }

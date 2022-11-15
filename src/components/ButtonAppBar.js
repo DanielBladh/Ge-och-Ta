@@ -35,7 +35,7 @@ export default function ButtonAppBar() {
                     >
                         <ArrowBackIcon />
                     </IconButton>
-                    <IconButton
+                    <IconButton onClick={() => {navigate('/Welcome')}}
                         size="large"
                         color="inherit"
                         aria-label="menu"
@@ -68,19 +68,19 @@ export default function ButtonAppBar() {
                                             <ListItemIcon sx={{ color: 'rgba(0, 0, 0, 1)' }}>
                                                 <LooksOneIcon sx={{ color: 'orange' }} />
                                             </ListItemIcon>
-                                            Kontrollera att dina uppgifter stämmer. {/* Sorterat upp så ListItemIcon wrappar runt Iconen */}
+                                            Kontrollera att dina uppgifter stämmer.
                                         </ListItem>
                                         <ListItem>
                                             <ListItemIcon sx={{ color: 'rgba(0, 0, 0, 1)' }}>
                                                 <LooksTwoIcon sx={{ color: 'orange' }} />
                                             </ListItemIcon>
-                                            Kontrollera storlek i klädpaketen och klicka på VÄLJ för att komma vidare. {/* Sorterat upp så ListItemIcon wrappar runt Iconen */}
+                                            Kontrollera storlek i klädpaketen och klicka på VÄLJ för att komma vidare.
                                         </ListItem>
                                         <ListItem>
                                             <ListItemIcon sx={{ color: 'rgba(0, 0, 0, 1)' }}>
                                                 <Looks3Icon sx={{ color: 'orange' }} />
                                             </ListItemIcon>
-                                            Läs igenom reglerna för tjänsten och kryssa i rutan att du har förstått. Sedan klicka på BEKRÄFTA. {/* Sorterat upp så ListItemIcon wrappar runt Iconen */}
+                                            Läs igenom reglerna för tjänsten och kryssa i rutan att du har förstått. Sedan klicka på BEKRÄFTA.
                                         </ListItem>
                                     </List>
                                 </Container>

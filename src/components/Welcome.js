@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Modal from "./Modal"
 import ButtonAppBar from './ButtonAppBar';
-import { Button } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 
 
 const Welcome = () => {
@@ -29,7 +29,7 @@ const Welcome = () => {
       <div className="welcome-header">
         {
           parents !== undefined && parents.length > 0 &&
-          <h1>Välkommen {parents[0].name}</h1>
+          <Typography variant="h3" fontFamily={'none'}>Välkommen {parents[0].name}</Typography>
         }
       </div>
       <div className="welcome-content">
@@ -38,23 +38,25 @@ const Welcome = () => {
             parents !== undefined && parents.map((item, index) => {
               return (
                 <div key={index}>
-                  <p className="welcome-p">Du har {item.children.length} barn registrerad.</p>
+                  <Typography variant="h6">Du har {item.children.length} barn registrerad.</Typography>
                   {
                     item.children.map((child, index) => {
                       return (
-                        <p className="welcome-p" key={index}>{child.name} - {child.age}</p>
-                      )
-                    })
-                  }
-                  {
-                    item.currentPackages.map((currentPackage, index) => {
-                      return (
-                        <p className="welcome-p" key={index}>{currentPackage.size}</p>
+                        <Typography variant="body2" className="welcome-p" key={index}>{child.name} - {child.age}</Typography>
                       )
                     })
                   }
                   <br />
-                  <p className="welcome-p">Din registrerade adress är: <br /> {parents[0].adress} <br /> {parents[0].postnummer} {parents[0].ort}</p>
+                  <Typography variant="h6">Dina aktiva klädpaket:</Typography>
+                  {
+                    item.currentPackages.map((currentPackage, index) => {
+                      return (
+                        <Typography variant="body2" className="welcome-p" key={index}>{currentPackage.size}</Typography>
+                      )
+                    })
+                  }
+                  <br />
+                  <Typography variant="body2" className="welcome-p">Din registrerade adress är: <br /> {parents[0].adress} <br /> {parents[0].postnummer} {parents[0].ort}</Typography>
                   <Modal />
                 </div>
               )
