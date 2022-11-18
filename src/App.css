@@ -15,15 +15,3 @@ body {
   background-image: url(./assets/got.png);
   background-size: auto;
 }
-
-.selectBTN {
-  width: 90%;
-  height: 2.5rem;
-  border-radius: 10px;
-  background-color: #F3A358;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  border-color: transparent;
-}

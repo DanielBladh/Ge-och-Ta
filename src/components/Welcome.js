@@ -29,7 +29,7 @@ const Welcome = () => {
       <div className="welcome-header">
         {
           parents !== undefined && parents.length > 0 &&
-          <Typography variant="h3" fontFamily={'none'}>Välkommen {parents[0].name}</Typography>
+          <Typography variant="h3" fontFamily={'Be Vietnam Pro'}>Välkommen {parents[0].name}</Typography>
         }
       </div>
       <div className="welcome-content">
