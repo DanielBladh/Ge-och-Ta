@@ -12,6 +12,7 @@ const Welcome = () => {
 
   const [parents, setParents] = useState()
 
+  // Fetch parent object from db.json
   const getParents = async () => {
     const res = await fetch('http://localhost:3001/parents')
       .then((res) => res.json()
@@ -23,6 +24,7 @@ const Welcome = () => {
     getParents();
   }, []);
 
+  // Function to navigate to next page
   let navigate = useNavigate();
 
   return (

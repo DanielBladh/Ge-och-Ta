@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ButtonAppBar from './ButtonAppBar';
 import SelectStyles from "../styles/SelectStyles";
 
+import '../styles/Select.css'
+
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -22,8 +24,25 @@ import ChildCareIcon from '@mui/icons-material/ChildCare';
 
 const Select = () => {
 
+    const styles = {
+        confirmButton: {
+            backgroundColor: '#F3A358',
+            margin: 'auto',
+            width: '90%',
+            height: '2.5rem',
+            fontWeight: 'bold',
+            color: 'white',
+            fontSize: '1rem',
+            left: '50%',
+            marginLeft: '-45%',
+            position: 'absolute',
+            bottom: 0,
+        }
+    }
+
     const [packages, setPackages] = useState(null);
 
+    // Fetch package object from db.json
     const getPackages = async () => {
         const res = await fetch('http://localhost:3001/packages')
             .then((res) => res.json())
@@ -37,6 +56,7 @@ const Select = () => {
 
     let navigate = useNavigate();
 
+    // Fetch specific parent to add package choice by user.
     const packageChoice = (wholePackage) => {
         fetch('http://localhost:3001/parents/0').then((res) => {
             res.json().then((parent) => {
@@ -65,6 +85,8 @@ const Select = () => {
                 </Typography>
             </Container>
             <Container>
+
+                {/* Map out all packages in accordion dropdown. Give each accordion unique ID for styling. */}
                 {
                     packages !== undefined && packages !== null &&
                     packages.map((item, index) => {
@@ -75,11 +97,11 @@ const Select = () => {
                                     aria-controls="panel1a-content"
                                     id={`panel${index + 1}a-header`}
                                 >
-                                    <Typography className={`option${index + 1}`}>
+                                    <Typography className={`option-${index + 1}`}>
                                         {item.size}
                                     </Typography>
                                 </AccordionSummary>
-                                <AccordionDetails className={`option${index + 1}`}>
+                                <AccordionDetails className={`option-${index + 1}`}>
                                     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                                         <List>
                                             {
@@ -95,19 +117,7 @@ const Select = () => {
                                                 })
                                             }
                                         </List>
-                                        <Button sx={{
-                                            backgroundColor: '#F3A358',
-                                            margin: 'auto',
-                                            marginTop: '15px',
-                                            width: '90%',
-                                            height: '2.5rem',
-                                            fontWeight: 'bold',
-                                            color: 'white',
-                                            fontSize: '1rem',
-                                            left: '50%',
-                                            marginLeft: '-45%',
-                                            bottom: 0,
-                                        }}
+                                        <Button style={styles.confirmButton}
                                             onClick={() => { packageChoice(item); navigate('/Confirm') }}>
                                             VÄLJ
                                         </Button>

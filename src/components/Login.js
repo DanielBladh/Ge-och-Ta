@@ -4,17 +4,17 @@ import ButtonAppBar from "./ButtonAppBar";
 
 
 const Login = () => {
-    
+
     let navigate = useNavigate();
 
-    return ( 
+    return (
         <>
-        <ButtonAppBar />
-        <div className="main-content">
-            <img src={Bankid} alt="" style={{ height: '100%', margin: '0'}} onClick={() => { navigate('/Welcome') }}/>
-        </div>
+            <ButtonAppBar />
+            <div className="main-content">
+                <img src={Bankid} alt="" style={{ height: '100%', margin: '0' }} onClick={() => { navigate('/Welcome') }} />
+            </div>
         </>
-     );
+    );
 }
- 
+
 export default Login;

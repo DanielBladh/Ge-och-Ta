@@ -20,11 +20,13 @@ import ButtonAppBar from './ButtonAppBar';
 
 const Confirm = () => {
 
+    //  Checkbox to display button 
     const [check, setCheck] = useState([]);
     const handleChange = () => {
         setCheck(!check);
     };
 
+    // Set state button not visible
     const [show, setShow] = useState(false);
 
     let navigate = useNavigate();

@@ -25,7 +25,7 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button sx={{color: "orange", textTransform: "none"}} className='modalBTN' onClick={handleOpen}>Stämmer inte dina uppgifter?</Button>
+      <Button sx={{ color: "orange", textTransform: "none" }} className='modalBTN' onClick={handleOpen}>Stämmer inte dina uppgifter?</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -34,12 +34,12 @@ export default function BasicModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-          Stämmer inte dina uppgifter? <br/>
-          Hör av dig till ansvarig på Nacka kommun.
+            Stämmer inte dina uppgifter? <br />
+            Hör av dig till ansvarig på Nacka kommun.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Kontaktperson: Margareta af Silversked <br/>
-            Telefonnummer: 08 71 67 676 <br/>
+            Kontaktperson: Margareta af Silversked <br />
+            Telefonnummer: 08 71 67 676 <br />
             Kontor: Nacka Kommun
           </Typography>
         </Box>

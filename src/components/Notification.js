@@ -4,10 +4,11 @@ import { Typography, Avatar } from "@mui/material";
 import * as React from "react";
 
 import sweaterrecycle from '../assets/sweaterrecycle.png'
-import nackalogo from '../assets/nackalogo.webp'
+
 
 const Notification = () => {
 
+    // Function to redirect user to homepage after 10 seconds.
     setTimeout(function () {
         window.location.href = "http://localhost:3000/Welcome"
     }, 10000)
