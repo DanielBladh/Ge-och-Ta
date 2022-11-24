@@ -35,7 +35,7 @@ export default function ButtonAppBar() {
                     >
                         <ArrowBackIcon />
                     </IconButton>
-                    <IconButton onClick={() => {navigate('/Welcome')}}
+                    <IconButton onClick={() => { navigate('/Welcome') }}
                         size="large"
                         color="inherit"
                         aria-label="menu"
@@ -43,7 +43,7 @@ export default function ButtonAppBar() {
                     >
                         <HomeOutlinedIcon />
                     </IconButton>
-                    <Popup trigger={<Button className="infoButton" style={{ border: 'none' }}>
+                    <Popup trigger={
                         <IconButton
                             size="large"
                             color="inherit"
@@ -52,7 +52,7 @@ export default function ButtonAppBar() {
                         >
                             <InfoOutlinedIcon />
                         </IconButton>
-                    </Button>}
+                    }
                         modal
                         nested
                     >

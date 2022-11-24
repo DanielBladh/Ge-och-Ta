@@ -101,7 +101,7 @@ const Confirm = () => {
                 </div>
                 <div>
                     {
-                        show && <Button className='selectBTN' sx={{
+                        show && <Button sx={{
                             backgroundColor: '#F3A358',
                             margin: 'auto',
                             width: '90%',

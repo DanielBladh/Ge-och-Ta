@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonAppBar from './ButtonAppBar';
+import SelectStyles from "../styles/SelectStyles";
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -9,8 +10,6 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Container from '@mui/material/Container';
-
-
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
 import List from '@mui/material/List';
@@ -59,13 +58,13 @@ const Select = () => {
     return (
         <>
             <ButtonAppBar />
-            <Container className="select-header">
+            <Container style={SelectStyles.selectHeader}>
                 <Typography variant="h4">Våra paket</Typography>
-                <Typography className="select-p"> Välj mellan 3 olika storlekar nedan. <br />
+                <Typography style={SelectStyles.selectP}> Välj mellan 3 olika storlekar nedan. <br />
                     Alla paket kommer i blandade färger.
                 </Typography>
             </Container>
-            <Container className="accordion-menu">
+            <Container>
                 {
                     packages !== undefined && packages !== null &&
                     packages.map((item, index) => {
@@ -76,11 +75,11 @@ const Select = () => {
                                     aria-controls="panel1a-content"
                                     id={`panel${index + 1}a-header`}
                                 >
-                                    <Typography className={`option-${index + 1}`}>
+                                    <Typography className={`option${index + 1}`}>
                                         {item.size}
                                     </Typography>
                                 </AccordionSummary>
-                                <AccordionDetails className={`option-${index + 1}`}>
+                                <AccordionDetails className={`option${index + 1}`}>
                                     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                                         <List>
                                             {
@@ -118,7 +117,7 @@ const Select = () => {
                         )
                     })
                 }
-                <button onClick={() => { navigate('/Confirm')}}>nästa</button>
+                <button onClick={() => { navigate('/Confirm') }}>nästa(för att inte spara paket till användare)</button>
             </Container>
         </>
     );

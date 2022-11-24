@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6d1a73b3.css",
+    "main.js": "/static/js/main.6705fb32.js",
+    "static/media/got.png": "/static/media/got.e3b5c1dda166c10cca3f.png",
+    "static/media/Bankid.png": "/static/media/Bankid.b04bf8bd2243e302339c.png",
+    "static/media/sweaterrecycle.png": "/static/media/sweaterrecycle.16bdce19daa108555305.png",
+    "static/media/nackalogo.webp": "/static/media/nackalogo.e42bb017b3363bd3c0d1.webp",
+    "index.html": "/index.html",
+    "main.6d1a73b3.css.map": "/static/css/main.6d1a73b3.css.map",
+    "main.6705fb32.js.map": "/static/js/main.6705fb32.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d1a73b3.css",
+    "static/js/main.6705fb32.js"
+  ]
+}
