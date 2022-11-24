@@ -1,2 +1,2 @@
 # Ge-och-Ta
-School project - Mobile app
+School project - Mobile app - Recycle theme
